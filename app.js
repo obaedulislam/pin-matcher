@@ -9,6 +9,8 @@ function getPin(){
         return getPin();
     }
 }
+
+//Pin Generation
 function generatePin(){
     const pin = getPin();
     const displayPin = document.getElementById('display-pin');
@@ -32,3 +34,18 @@ document.getElementById('key-pad').addEventListener('click', function(event){
 
 });
 
+//Verify or match the pin
+function verifyPin(){
+    const pinInput = document.getElementById('display-pin').value;
+    const calcInput = document.getElementById('calc-input'). value;
+    const successMessage = document.getElementById('notify-success');
+    const failError = document.getElementById('notify-fail');
+    if(pinInput == calcInput){
+        successMessage.style.display = "block";
+        failError.style.display = "none";
+    }
+    else{
+        failError.style.display = "block";
+        successMessage.style.display = "none";
+    }
+}
